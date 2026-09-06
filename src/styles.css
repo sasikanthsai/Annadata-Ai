@@ -1,0 +1,849 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* =========================================================
+   ANNADATA AI — SMART AGRICULTURE DESIGN SYSTEM
+   ========================================================= */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-glow: var(--primary-glow);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* =========================================================
+   LIGHT THEME
+   ========================================================= */
+
+:root {
+  --radius: 0.75rem;
+
+  --background: oklch(0.985 0.012 130);
+  --foreground: oklch(0.22 0.04 155);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.04 155);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.04 155);
+
+  /* Primary forest green */
+  --primary: oklch(0.48 0.10 155);
+  --primary-foreground: oklch(0.985 0.012 130);
+  --primary-glow: oklch(0.72 0.14 155);
+
+  /* Secondary sage */
+  --secondary: oklch(0.94 0.03 145);
+  --secondary-foreground: oklch(0.28 0.06 155);
+
+  --muted: oklch(0.95 0.015 130);
+  --muted-foreground: oklch(0.48 0.03 150);
+
+  --accent: oklch(0.85 0.13 145);
+  --accent-foreground: oklch(0.22 0.06 155);
+
+  --success: oklch(0.65 0.16 150);
+  --success-foreground: oklch(1 0 0);
+
+  --warning: oklch(0.78 0.16 75);
+  --warning-foreground: oklch(0.2 0.05 60);
+
+  --destructive: oklch(0.6 0.21 27);
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(0.9 0.02 140);
+  --input: oklch(0.92 0.02 140);
+  --ring: oklch(0.48 0.10 155);
+
+  /* Sidebar */
+  --sidebar: oklch(0.22 0.05 155);
+  --sidebar-foreground: oklch(0.96 0.01 130);
+  --sidebar-primary: oklch(0.72 0.14 155);
+  --sidebar-primary-foreground: oklch(0.18 0.04 155);
+  --sidebar-accent: oklch(0.3 0.05 155);
+  --sidebar-accent-foreground: oklch(0.96 0.01 130);
+  --sidebar-border: oklch(0.3 0.04 155);
+  --sidebar-ring: oklch(0.72 0.14 155);
+
+  /* =======================================================
+     Gradients
+     ======================================================= */
+
+  --gradient-hero: linear-gradient(
+    135deg,
+    oklch(0.32 0.08 155) 0%,
+    oklch(0.48 0.10 155) 60%,
+    oklch(0.72 0.14 155) 100%
+  );
+
+  --gradient-card: linear-gradient(
+    135deg,
+    oklch(1 0 0) 0%,
+    oklch(0.97 0.02 145) 100%
+  );
+
+  --gradient-sky: linear-gradient(
+    180deg,
+    oklch(0.85 0.08 230) 0%,
+    oklch(0.95 0.03 200) 100%
+  );
+
+  /* =======================================================
+     Shadows
+     ======================================================= */
+
+  --shadow-soft:
+    0 1px 2px oklch(0.22 0.04 155 / 0.05),
+    0 2px 8px oklch(0.22 0.04 155 / 0.06);
+
+  --shadow-elegant:
+    0 4px 24px -8px oklch(0.32 0.08 155 / 0.18);
+
+  --shadow-glow:
+    0 0 32px oklch(0.72 0.14 155 / 0.35);
+
+  --transition-smooth: all 220ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =========================================================
+   DARK THEME
+   ========================================================= */
+
+.dark {
+  --background: oklch(0.16 0.025 155);
+  --foreground: oklch(0.96 0.012 130);
+
+  --card: oklch(0.22 0.03 155);
+  --card-foreground: oklch(0.96 0.012 130);
+
+  --popover: oklch(0.22 0.03 155);
+  --popover-foreground: oklch(0.96 0.012 130);
+
+  --primary: oklch(0.72 0.14 155);
+  --primary-foreground: oklch(0.16 0.025 155);
+  --primary-glow: oklch(0.82 0.16 155);
+
+  --secondary: oklch(0.28 0.04 155);
+  --secondary-foreground: oklch(0.96 0.012 130);
+
+  --muted: oklch(0.26 0.03 155);
+  --muted-foreground: oklch(0.72 0.02 140);
+
+  --accent: oklch(0.4 0.10 155);
+  --accent-foreground: oklch(0.96 0.012 130);
+
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.72 0.14 155);
+}
+
+/* =========================================================
+   ACCENT THEMES
+   ========================================================= */
+
+:root[data-accent="sky"] {
+  --primary: oklch(0.55 0.16 230);
+  --primary-glow: oklch(0.75 0.14 230);
+  --ring: oklch(0.55 0.16 230);
+  --sidebar-primary: oklch(0.75 0.14 230);
+}
+
+:root[data-accent="sunset"] {
+  --primary: oklch(0.62 0.21 30);
+  --primary-glow: oklch(0.78 0.17 40);
+  --ring: oklch(0.62 0.21 30);
+  --sidebar-primary: oklch(0.78 0.17 40);
+}
+
+:root[data-accent="amber"] {
+  --primary: oklch(0.72 0.17 75);
+  --primary-glow: oklch(0.85 0.15 80);
+  --ring: oklch(0.72 0.17 75);
+  --sidebar-primary: oklch(0.85 0.15 80);
+}
+
+:root[data-accent="violet"] {
+  --primary: oklch(0.55 0.20 295);
+  --primary-glow: oklch(0.75 0.17 295);
+  --ring: oklch(0.55 0.20 295);
+  --sidebar-primary: oklch(0.75 0.17 295);
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: color-mix(
+      in oklab,
+      var(--primary) 25%,
+      transparent
+    );
+
+    color: var(--foreground);
+  }
+}
+
+/* =========================================================
+   CUSTOM UTILITIES
+   ========================================================= */
+
+@utility bg-gradient-hero {
+  background: var(--gradient-hero);
+}
+
+@utility bg-gradient-card {
+  background: var(--gradient-card);
+}
+
+@utility bg-gradient-sky {
+  background: var(--gradient-sky);
+}
+
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+@utility shadow-elegant {
+  box-shadow: var(--shadow-elegant);
+}
+
+@utility shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+@utility transition-smooth {
+  transition: var(--transition-smooth);
+}
+
+/* =========================================================
+   CREATOR BADGE ANIMATIONS
+   ========================================================= */
+
+@keyframes glow-soft {
+  0%,
+  100% {
+    filter: drop-shadow(
+      0 0 2px
+        color-mix(
+          in oklab,
+          var(--primary-glow) 40%,
+          transparent
+        )
+    );
+  }
+
+  50% {
+    filter: drop-shadow(
+      0 0 8px
+        color-mix(
+          in oklab,
+          var(--primary-glow) 60%,
+          transparent
+        )
+    );
+  }
+}
+
+@keyframes shimmer-soft {
+  0% {
+    background-position: -150% center;
+  }
+
+  100% {
+    background-position: 150% center;
+  }
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-3px) rotate(6deg);
+  }
+}
+
+@utility animate-glow-soft {
+  animation: glow-soft 3s ease-in-out infinite;
+}
+
+@utility animate-shimmer-soft {
+  background: linear-gradient(
+    90deg,
+    var(--primary) 0%,
+    var(--primary-glow) 35%,
+    var(--primary) 50%,
+    var(--primary-glow) 65%,
+    var(--primary) 100%
+  );
+
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  animation: shimmer-soft 4s linear infinite;
+}
+
+@utility animate-float-soft {
+  animation: float-soft 2.8s ease-in-out infinite;
+}
+
+/* =========================================================
+   ANNADATA AI — AGRICULTURE WELCOME LOADER
+   ========================================================= */
+
+/*
+  The old CSS-drawn farmer animation has been removed.
+
+  The welcome screen now uses the real agriculture animation
+  from the Ajinkya agriculture GIF.
+*/
+
+.annadata-welcome-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #101c0d;
+
+  opacity: 1;
+  visibility: visible;
+
+  transition:
+    opacity 0.9s ease,
+    visibility 0.9s ease;
+}
+
+/* Loader closing state */
+.annadata-welcome-loader--closing {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* =========================================================
+   AGRICULTURE GIF BACKGROUND
+   ========================================================= */
+
+.annadata-welcome-loader__background {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center center;
+
+  user-select: none;
+  -webkit-user-drag: none;
+
+  transform: scale(1.02);
+}
+
+/* =========================================================
+   DARK READABILITY OVERLAY
+   ========================================================= */
+
+.annadata-welcome-loader__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.30) 0%,
+      rgba(0, 0, 0, 0.18) 35%,
+      rgba(0, 0, 0, 0.45) 100%
+    );
+}
+
+/* =========================================================
+   SOFT CENTER LIGHT
+   ========================================================= */
+
+.annadata-welcome-loader::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: -1;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0) 45%
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   WELCOME CONTENT
+   ========================================================= */
+
+.annadata-welcome-loader__content {
+  position: relative;
+  z-index: 5;
+
+  width: min(92%, 760px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  color: white;
+
+  animation:
+    annadataWelcomeContent
+    1s
+    ease-out
+    both;
+}
+
+/* =========================================================
+   SMART FARMING BADGE
+   ========================================================= */
+
+.annadata-welcome-loader__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 999px;
+
+  background: rgba(0, 0, 0, 0.28);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  color: rgba(255, 255, 255, 0.94);
+
+  animation:
+    annadataWelcomeBadge
+    0.9s
+    ease-out
+    0.15s
+    both;
+}
+
+/* =========================================================
+   MAIN WELCOME TITLE
+   ========================================================= */
+
+.annadata-welcome-loader__title {
+  margin: 20px 0 0;
+
+  font-size: clamp(2.4rem, 7vw, 5.5rem);
+
+  line-height: 0.98;
+
+  font-weight: 800;
+
+  letter-spacing: -0.04em;
+
+  text-shadow:
+    0 4px 25px rgba(0, 0, 0, 0.45),
+    0 2px 8px rgba(0, 0, 0, 0.35);
+
+  animation:
+    annadataWelcomeTitle
+    1s
+    ease-out
+    0.25s
+    both;
+}
+
+/* Annadata AI gradient text */
+.annadata-welcome-loader__title span {
+  display: block;
+
+  margin-top: 8px;
+
+  font-weight: 900;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #e8ffd6,
+      #ffffff
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  background-size: 200% auto;
+
+  animation:
+    annadataWelcomeTitle
+    1s
+    ease-out
+    0.25s
+    both,
+    annadataWelcomeShimmer
+    3s
+    linear
+    infinite;
+}
+
+/* =========================================================
+   SUBTITLE
+   ========================================================= */
+
+.annadata-welcome-loader__subtitle {
+  margin: 20px 0 0;
+
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+
+  font-weight: 500;
+
+  color: rgba(255, 255, 255, 0.92);
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.5);
+
+  animation:
+    annadataWelcomeSubtitle
+    0.9s
+    ease-out
+    0.5s
+    both;
+}
+
+/* =========================================================
+   LOADING DOTS
+   ========================================================= */
+
+.annadata-welcome-loader__loading {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 30px;
+
+  animation:
+    annadataWelcomeSubtitle
+    0.9s
+    ease-out
+    0.7s
+    both;
+}
+
+.annadata-welcome-loader__loading span {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.65);
+
+  animation:
+    annadataWelcomeDot
+    1.2s
+    ease-in-out
+    infinite;
+}
+
+.annadata-welcome-loader__loading span:nth-child(2) {
+  animation-delay: 0.16s;
+}
+
+.annadata-welcome-loader__loading span:nth-child(3) {
+  animation-delay: 0.32s;
+}
+
+/* =========================================================
+   WELCOME ANIMATIONS
+   ========================================================= */
+
+@keyframes annadataWelcomeContent {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes annadataWelcomeBadge {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes annadataWelcomeTitle {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes annadataWelcomeSubtitle {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes annadataWelcomeDot {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(0) scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1);
+  }
+}
+
+@keyframes annadataWelcomeShimmer {
+  0% {
+    background-position: 200% center;
+  }
+
+  100% {
+    background-position: -200% center;
+  }
+}
+
+/* =========================================================
+   MOBILE WELCOME LOADER
+   ========================================================= */
+
+@media (max-width: 640px) {
+  .annadata-welcome-loader__background {
+    object-position: center center;
+  }
+
+  .annadata-welcome-loader__overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.38) 0%,
+        rgba(0, 0, 0, 0.22) 40%,
+        rgba(0, 0, 0, 0.55) 100%
+      );
+  }
+
+  .annadata-welcome-loader__badge {
+    padding: 7px 12px;
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.10em;
+  }
+
+  .annadata-welcome-loader__title {
+    margin-top: 16px;
+
+    font-size: clamp(
+      2.2rem,
+      12vw,
+      3.7rem
+    );
+  }
+
+  .annadata-welcome-loader__subtitle {
+    margin-top: 16px;
+
+    font-size: 0.95rem;
+  }
+
+  .annadata-welcome-loader__loading {
+    margin-top: 24px;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY — REDUCE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .annadata-welcome-loader,
+  .annadata-welcome-loader__content,
+  .annadata-welcome-loader__badge,
+  .annadata-welcome-loader__title,
+  .annadata-welcome-loader__title span,
+  .annadata-welcome-loader__subtitle,
+  .annadata-welcome-loader__loading,
+  .annadata-welcome-loader__loading span {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* =========================================================
+   GENERAL REDUCED MOTION SUPPORT
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================
+   MOBILE OPTIMIZATION
+   ========================================================= */
+
+@media (max-width: 640px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* =========================================================
+   SAFE AREA SUPPORT FOR MOBILE DEVICES
+   ========================================================= */
+
+@supports (padding: env(safe-area-inset-top)) {
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
