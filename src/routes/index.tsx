@@ -222,7 +222,7 @@ function Landing() {
             <div className="relative h-[430px] w-[320px] overflow-hidden rounded-[2rem] border border-[oklch(0.92_0.16_82)]/70 bg-[oklch(0.12_0.035_155)] p-1 shadow-[0_20px_70px_rgba(0,0,0,0.45)] sm:h-[500px] sm:w-[370px] md:h-[540px] md:w-[400px]">
 
               <img
-                src="https://i.postimg.cc/yY5nff57/Chat-GPT-Image-Jul-2-2026-08-59-48-AM.png"
+                src="https://i.postimg.cc/CLSW9nY7/Chat-GPT-Image-Sep-27-2026-08-15-10-PM.png"
                 alt="Sasi Kanth Sai — Founder, Creator & Lead Developer of Annadata AI"
                 className="h-full w-full rounded-[1.75rem] object-cover object-top"
               />
